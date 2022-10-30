@@ -3,6 +3,11 @@ local function ts(object,tweenInfo,properties) if tweenInfo[2] and typeof(tweenI
 local function udim2(x1,x2,y1,y2) local t = tonumber;return UDim2.new(t(x1),t(x2),t(y1),t(y2)) end
 local function rgb(r,g,b) return Color3.fromRGB(r,g,b);end
 
+if not syn then
+    getgenv().syn = {
+        request = http_request
+    }
+end
 
 pcall(function()
     game:service('CoreGui')['6crimzL']:Destroy()
